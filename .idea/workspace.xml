@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d00b2-1bf1-41c8-b903-9f0bd4a52a48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/TodoList/TodoInput/TodoInput.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TodoList/TodoInput/TodoInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/SupperInput/SupperInput.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/SupperInput/SupperInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/todoList-reducer.test.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoButtons/TodoButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoButtons/TodoButtons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/todoList-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/todoList-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +60,8 @@
       <workItem from="1610827634724" duration="1238000" />
       <workItem from="1610831685117" duration="1412000" />
       <workItem from="1610895650610" duration="603000" />
-      <workItem from="1610900206598" duration="814000" />
+      <workItem from="1610900206598" duration="903000" />
+      <workItem from="1610908235050" duration="2714000" />
     </task>
     <servers />
   </component>

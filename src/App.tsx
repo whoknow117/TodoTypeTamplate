@@ -5,7 +5,6 @@ import {AppRootStateType} from "./redux/store";
 import {useDispatch, useSelector} from "react-redux";
 import {TaskStateType, TodoListType} from "./types/types";
 import {ChangeTodoListTitleAC, AddTodoListAC} from "./redux/todoList-reducer";
-import {v1} from "uuid";
 import {TodoInput} from "./components/TodoList/TodoInput/TodoInput";
 import {addTaskAC, changeTaskStatusAC, removeTaskAC} from "./redux/tasks-reducer";
 
@@ -48,11 +47,11 @@ function App( ) {
 
             let data = tasks[tl.id]
             return (
-               <div className="todoList">
+               <div  key={tl.id} className="todoList">
 
                    <TodoList
                        addTask={addTask}
-                       key={tl.id}
+
                        todoID={tl.id}
                        title={tl.title}
                        data={data}

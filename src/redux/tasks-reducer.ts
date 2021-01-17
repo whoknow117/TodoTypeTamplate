@@ -1,5 +1,12 @@
 import {v1} from "uuid";
-import {ActionsType, AddTaskActionType, TaskStateType, TaskType, TodoListType} from "../types/types";
+import {
+    ActionsType,
+    AddTaskActionType,
+    ChangeTaskStatusActionType,
+    TaskStateType,
+    TaskType,
+    TodoListType
+} from "../types/types";
 
 
 
@@ -26,10 +33,10 @@ export const addTaskAC = (title: string, todoListID: string): AddTaskActionType 
         todoListID: todoListID
     }
 }
-export const changeTaskStatusAC = (taskID:string, todoListID: string, isDone: boolean)  => {
+export const changeTaskStatusAC = (taskID:string, todoListID: string, isDone: boolean): ChangeTaskStatusActionType  => {
 
     return {
-        type: "ADD-TASK",
+        type: "CHANGE-TASK-STATUS",
         taskID: taskID,
         todoListID: todoListID,
         isDone: isDone
@@ -39,24 +46,32 @@ export const changeTaskStatusAC = (taskID:string, todoListID: string, isDone: bo
 
 export const tasksReducer = (state = initialState , action:ActionsType):TaskStateType => {
         switch (action.type){
+
+            case "CHANGE-TASK-STATUS" : {
+                debugger;
+                console.log('wtf?')
+                return {
+                    ...state, [action.todoListID]: state[action.todoListID].map
+                    (t => {
+                        if (t.id !== action.taskID) return t
+                        else return {...t, isDone: action.isDone}
+                    })
+                }
+            }
             case "REMOVE-TASK": {
+                console.log('RemoveTask')
                 return {...state,[action.todoID]: state[action.todoID].filter(t => t.id !== action.taskID)}
             }
             case "ADD-TODOLIST" :
+                console.log('add-todo')
                 console.log(state[action.todoListID])
                 const stateCopy = {...state}
                 stateCopy[action.todoListID] = [];
                 return stateCopy;
 
             case "ADD-TASK": {
-                debugger;
-                // const newTask: TaskType = {x
-                //     id: v1(),
-                //     title: action.title,
-                //     isDone: false
-                // }
-                //
-                // return {...state,[action.todoListID]:[newTask,...state[action.todoListID]] }
+
+                console.log('AddTask')
                 const copyState = {...state}
                 const newTask: TaskType = {
                     id: v1(),
@@ -69,22 +84,8 @@ export const tasksReducer = (state = initialState , action:ActionsType):TaskStat
                 return copyState
 
             }
-            // case "CHANGE-TASK-STATUS": {
-            //     return  {...state,[action.todoListID]: state[action.todoListID].map(t =>{
-            //      if(t.id === action.taskID) {
-            //         t.isDone = action.isDone;
-            //      }
-            //
-            //     }
-            //     })}
-            case "CHANGE-TASK-STATUS": {
-                return {...state,[action.todoListID]: state[action.todoListID].map( el => {
-                    if(el.id === action.taskID) {
-                        el.isDone = action.isDone
-                    }
-                    return el;
-                    })}
-            }
+
+
             default:
                 return state;
 
