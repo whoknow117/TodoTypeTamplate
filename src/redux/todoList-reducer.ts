@@ -1,21 +1,59 @@
 import {v1} from "uuid";
-import {ActionsType, TodoListType} from "../types/types";
+import {ActionsType, AddTodoListActionType, ChangeTodoListTitleActionType, TodoListType} from "../types/types";
 
 
-let todoListID1:string = v1();
-let todoListID2:string = v1();
 
 
-let initialState: Array<TodoListType>  =  [
-    {id: todoListID1, title: 'What to learn?', filter: 'all'},
-    {id: todoListID2, title: 'What to eat?', filter: 'all'},
-]
 
 
-const todoListReducer = (state:Array<TodoListType> = initialState , action:ActionsType) => {
+let initialState: Array<TodoListType>  =  []
 
+
+export const todoListReducer = (state = initialState , action:ActionsType):Array<TodoListType> => {
+    switch (action.type) {
+        case "ADD-TODOLIST": {
+
+            const newTodoList: TodoListType ={
+                id: action.todoListID,
+                title: action.title,
+                filter: 'all'
+            }
+            console.log('asd')
+            return [...state, newTodoList]
+        }
+        case "CHANGE-TODOLIST-TITLE": {
+            const sortTodo = state.find( el => el.id === action.todoListID)
+            if(sortTodo) {
+                sortTodo.title = action.title
+
+            }
+            return [...state]
+        }
+
+
+        default: {
+            return state;
+        }
+
+
+    }
 }
 
 
+export const AddTodoListAC = (title: string):AddTodoListActionType => {
+    return {
+        type: "ADD-TODOLIST",
+        todoListID: v1(),
+        title: title
+    }
+}
 
-export default todoListReducer;
+export const ChangeTodoListTitleAC = (title: string, todoListID: string):ChangeTodoListTitleActionType => {
+    return {
+        type: "CHANGE-TODOLIST-TITLE",
+        todoListID: v1(),
+        title: title
+    }
+}
+
+
