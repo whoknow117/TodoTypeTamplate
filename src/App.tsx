@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {TaskStateType, TodoListType} from "./types/types";
 import {ChangeTodoListTitleAC, AddTodoListAC} from "./redux/todoList-reducer";
 import {TodoInput} from "./components/TodoList/TodoInput/TodoInput";
-import {addTaskAC, changeTaskStatusAC, removeTaskAC} from "./redux/tasks-reducer";
+import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from "./redux/tasks-reducer";
 
 
 
@@ -36,6 +36,12 @@ function App( ) {
     const removeTask = (taskID: string,todoListID: string) => {
         dispatch(removeTaskAC(todoListID,taskID))
     }
+
+
+    const changeTaskTitle = (taskID: string, todoListID: string, title: string) => {
+        dispatch(changeTaskTitleAC(taskID,todoListID,title))
+    }
+
     const changeTaskStatus = (taskID: string, todoListID:string, isDone: boolean) => {
         dispatch(changeTaskStatusAC(taskID,todoListID,isDone))
     }
@@ -56,6 +62,7 @@ function App( ) {
                        data={data}
                        removeTask={removeTask}
                        changeTaskStatus={changeTaskStatus}
+                       changeTaskTitle={changeTaskTitle}
                    />
 
                </div>

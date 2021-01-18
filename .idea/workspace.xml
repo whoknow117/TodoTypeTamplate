@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b21d00b2-1bf1-41c8-b903-9f0bd4a52a48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/EditableSpan/EditableSpan.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/EditableSpan/EditableSpan.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoInput/TodoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoInput/TodoInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SupperInput/SupperInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SupperInput/SupperInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tasks-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TodoList/TodoTask/TodoTask.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
       <workItem from="1610900206598" duration="903000" />
       <workItem from="1610908235050" duration="3339000" />
       <workItem from="1610918090560" duration="242000" />
-      <workItem from="1610959753540" duration="2300000" />
+      <workItem from="1610959753540" duration="3701000" />
     </task>
     <servers />
   </component>

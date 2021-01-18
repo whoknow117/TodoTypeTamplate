@@ -1,6 +1,7 @@
 import React, {ChangeEvent} from 'react';
 import classes from './TodoTask.module.scss';
 import {TaskType} from "../../../types/types";
+import EditableSpan from "../../common/EditableSpan/EditableSpan";
 
 type TodoTaskPropsType = {
     task: TaskType
@@ -8,9 +9,10 @@ type TodoTaskPropsType = {
     todoID: string
     taskID: string
     changeTaskStatus :(taskID: string, todoListID:string, isDone: boolean) => void
+    changeTaskTitle: (taskID: string, todoListID: string, title: string) => void
 }
 
-export const TodoTask:React.FC<TodoTaskPropsType> = ({taskID,changeTaskStatus,removeTask, todoID, task}) => {
+export const TodoTask:React.FC<TodoTaskPropsType> = ({changeTaskTitle,taskID,changeTaskStatus,removeTask, todoID, task}) => {
 
     const deleteCallBack = () => {
         removeTask(taskID,todoID)
@@ -19,10 +21,13 @@ export const TodoTask:React.FC<TodoTaskPropsType> = ({taskID,changeTaskStatus,re
         changeTaskStatus(taskID,todoID,e.currentTarget && e.currentTarget.checked)
     }
 
+    const changeTaskTitleCallback = (newTitle: string) => {
+        changeTaskTitle(taskID,todoID, newTitle);
+    }
 
     return <div className={classes.affairs}>
         <input checked={task.isDone} onChange={changeStatus}  type={'checkbox'}/>
-        <div>{task.title}</div>
+        <EditableSpan changeTaskTitle={changeTaskTitleCallback} title={task.title}/>
         <button onClick={deleteCallBack}>X</button>
     </div>
 

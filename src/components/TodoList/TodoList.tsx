@@ -14,9 +14,10 @@ type TodoListPropsType = {
     data: Array<TaskType>
     removeTask:(taskID: string,todoListID: string) => void
     changeTaskStatus:(taskID: string, todoListID:string, isDone: boolean) => void
+    changeTaskTitle: (taskID: string, todoListID: string, title: string) => void
 }
 
-export const TodoList:React.FC<TodoListPropsType> = ({changeTaskStatus,removeTask,data,addTask,todoID,title}) => {
+export const TodoList:React.FC<TodoListPropsType> = ({changeTaskTitle,changeTaskStatus,removeTask,data,addTask,todoID,title}) => {
 
 
 
@@ -25,7 +26,6 @@ export const TodoList:React.FC<TodoListPropsType> = ({changeTaskStatus,removeTas
     const addTaskCallback = (title: string) => {
          addTask(title,todoID)
     }
-
 
 
     return <div className={classes.todoList}>
@@ -40,6 +40,7 @@ export const TodoList:React.FC<TodoListPropsType> = ({changeTaskStatus,removeTas
                    removeTask={removeTask}
                    todoID={todoID}
                    changeTaskStatus={changeTaskStatus}
+                   changeTaskTitle={changeTaskTitle}
 
                />
            })}
