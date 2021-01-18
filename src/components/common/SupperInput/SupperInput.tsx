@@ -14,7 +14,13 @@ const SupperInput:React.FC<SuperInputPropsType> = ({
                                                     }) => {
 
 
-    return <div>213</div>
+    const onChangeCallback = (e:ChangeEvent<HTMLInputElement>) => {
+        onChange && onChange(e)
+        onChangeText && onChangeText(e.currentTarget.value)
+    }
+
+
+    return <input onChange={onChangeCallback} {...restProps} type="text"/>
 
 
 

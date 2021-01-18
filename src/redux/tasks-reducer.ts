@@ -2,7 +2,7 @@ import {v1} from "uuid";
 import {
     ActionsType,
     AddTaskActionType,
-    ChangeTaskStatusActionType,
+    ChangeTaskStatusActionType, ChangeTaskTitleActionType,
     TaskStateType,
     TaskType,
     TodoListType
@@ -43,9 +43,29 @@ export const changeTaskStatusAC = (taskID:string, todoListID: string, isDone: bo
     }
 }
 
+export const changeTaskTitleAC = (taskID:string, todoListID: string, title: string): ChangeTaskTitleActionType  => {
+
+    return {
+        type: "CHANGE-TASK-TITLE",
+        taskID: taskID,
+        todoListID: todoListID,
+        title: title
+    }
+}
+
 
 export const tasksReducer = (state = initialState , action:ActionsType):TaskStateType => {
         switch (action.type){
+
+            case "CHANGE-TASK-TITLE": {
+
+                return {...state,[action.todoListID]: state[action.todoListID].map( t => {
+                    if(t.id === action.taskID){
+                        return {...t, title: action.title}
+                    }
+                    return t;
+                    })}
+            }
 
             case "CHANGE-TASK-STATUS" : {
                 debugger;

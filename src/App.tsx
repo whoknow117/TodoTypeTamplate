@@ -51,7 +51,6 @@ function App( ) {
 
                    <TodoList
                        addTask={addTask}
-
                        todoID={tl.id}
                        title={tl.title}
                        data={data}

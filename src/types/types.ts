@@ -49,9 +49,17 @@ export type ChangeTaskStatusActionType = {
     isDone: boolean
 }
 
+export type ChangeTaskTitleActionType = {
+    type: "CHANGE-TASK-TITLE"
+    taskID: string
+    todoListID: string
+    title: string
+}
+
 export type ActionsType =
     RemoveTaskActionType
     | AddTodoListActionType
     | ChangeTodoListTitleActionType
     | AddTaskActionType
     | ChangeTaskStatusActionType
+    | ChangeTaskTitleActionType
